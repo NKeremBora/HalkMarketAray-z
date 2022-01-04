@@ -1,0 +1,35 @@
+ 
+<div class="mb-3">
+    <label for="filterText" class="form-label">Ürün ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+    placeholder="arama ifadesi giriniz">
+  </div>
+  <div  *ngIf="filterText.length" class="alert alert-success">
+     {{filterText}}  aradınız.
+  </div>
+
+<div class="row" id ="endis" 
+*ngFor="let product of products | searchfilter:filterText |county:currentCounty ">
+    <div class="col-3">
+        <div class="row">
+            <a href="#"><img src="html.jpg" alt="Örnek Resim" /></a>
+        </div>
+    </div>
+    <div id="urun" class="col-7">
+        <div class="row">
+            <div class="col">
+                 {{product.productName}}
+              </div>
+            <div class="col">
+                Urun Fiyati : {{product.unitPrice}}TL
+            </div>
+            <div class="col">
+                Urun Adeti : {{product.unitsInStock}}
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+            <button (click)="addToCart(product)"id ="submit" class="btn btn-outline-primary" type="button">Sepete Ekle</button>
+        
+    </div>
+</div> 

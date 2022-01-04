@@ -1,0 +1,14 @@
+form button{
+    margin: 10px
+}
+a { font-weight: bold;
+    text-transform: uppercase;
+    color: grey !important;
+}
+span{
+    color:aqua;
+}
+
+button {
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+}
